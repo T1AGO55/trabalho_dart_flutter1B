@@ -1,40 +1,41 @@
-class Hardware{
-  String __processador;
-  int __qtdMemoriaRam;
-  String __placaDeVideo;
-  String __armazenamento;
-  tipoArmazenamento __tipoArmazenamento;
-  
+class Hardware {
+  String _processador;
+  final int _qtdMemoriaRam;
+  final String _placaDeVideo;
+  final String _armazenamento;
+  final tipoArmazenamento _tipoArmazenamento;
+
   Hardware({
-    required processador,
-    required qtdMemoriaRam,
-    required placaDeVideo,
-    required armazenamento,
+    required String processador,
+    required int qtdMemoriaRam,
+    required String placaDeVideo,
+    required String armazenamento,
     required tipoArmazenamento,
-  }) :__processador = processador, __qtdMemoriaRam = qtdMemoriaRam, __placaDeVideo = placaDeVideo, __armazenamento = armazenamento, __tipoArmazenamento = tipoArmazenamento;
+  }) : _processador = processador,
+       _qtdMemoriaRam = qtdMemoriaRam,
+       _placaDeVideo = placaDeVideo,
+       _armazenamento = armazenamento,
+       _tipoArmazenamento = tipoArmazenamento;
 
-  String getProcessador(){
-    return __processador;
+  String getProcessador() {
+    return _processador;
   }
 
-  void setProcessador(String processador){
-      __processador = processador;
-  }
-  int get getqtdMemoriaRam => __qtdMemoriaRam;
-
-  String get getPlacaDeVideo => __placaDeVideo;
-
-  String get getArmazenamento => __armazenamento;
-
-  tipoArmazenamento get getTipoArmazenamento => __tipoArmazenamento;
-
-  String fichaTecnica(){
-    return "Processador: "+ __processador + " | Memoria Ram: "+ __qtdMemoriaRam.toString() +"gb" + " | Placa de Video: "+ __placaDeVideo+ " | Armazenamento: "+__armazenamento + " | Tipo Armazenamento: "+ __tipoArmazenamento.name;
+  void setProcessador(String processador) {
+    _processador = processador;
   }
 
+  int get getqtdMemoriaRam => _qtdMemoriaRam;
 
+  String get getPlacaDeVideo => _placaDeVideo;
+
+  String get getArmazenamento => _armazenamento;
+
+  tipoArmazenamento get getTipoArmazenamento => _tipoArmazenamento;
+
+  String fichaTecnica() {
+    return "Processador: $_processador | Memoria Ram: ${_qtdMemoriaRam}gb | Placa de Video: $_placaDeVideo | Armazenamento: $_armazenamento | Tipo Armazenamento: ${_tipoArmazenamento.name}";
+  }
 }
-enum tipoArmazenamento{
-  HD,
-  SSD
-}
+
+enum tipoArmazenamento { HD, SSD }
